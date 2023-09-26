@@ -1,6 +1,6 @@
 require("nvterm").setup({
   terminals = {
-    shell = "pwsh.exe",
+    shell = "zsh",
     list = {},
     type_opts = {
       float = {
