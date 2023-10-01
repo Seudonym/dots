@@ -1,0 +1,5 @@
+nvim/.*
+nvim/LICENSE
+nvim/init.lua
+nvim/lua/core
+nvim/lua/plugins
