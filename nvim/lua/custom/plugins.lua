@@ -1,28 +1,29 @@
 local plugins = {
-  {'nvim-tree/nvim-web-devicons',
-    config = function ()
+  {
+    "nvim-tree/nvim-web-devicons",
+    config = function()
       require "custom.configs.devicons"
-    end
+    end,
   },
   {
     "NvChad/nvterm",
-    config = function ()
+    config = function()
       require("nvterm").setup()
       require "custom.configs.nvterm"
     end,
   },
   {
-  "neovim/nvim-lspconfig",
-   dependencies = {
-     "jose-elias-alvarez/null-ls.nvim",
-     config = function()
-       require "custom.configs.null-ls"
-     end,
-   },
-   config = function()
+    "neovim/nvim-lspconfig",
+    dependencies = {
+      "jose-elias-alvarez/null-ls.nvim",
+      config = function()
+        require "custom.configs.null-ls"
+      end,
+    },
+    config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
-   end,
+    end,
   },
 
   {
@@ -30,36 +31,48 @@ local plugins = {
     cmd = "Copilot",
     event = "InsertEnter",
     config = function()
-    require("copilot").setup({
-      suggestion = { enabled = true, auto_trigger = true},
-      panel = { enabled = false },
-    })
+      require("copilot").setup {
+        suggestion = { enabled = true, auto_trigger = true },
+        panel = { enabled = false },
+      }
     end,
   },
   {
-  "zbirenbaum/copilot-cmp",
-    config = function ()
-    require("copilot_cmp").setup()
-    end
+    "zbirenbaum/copilot-cmp",
+    config = function()
+      require("copilot_cmp").setup()
+    end,
   },
 
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
-        -- defaults 
+        -- defaults
         "vim",
         "lua",
 
-        -- web dev 
+        -- web dev
         "html",
         "css",
         "javascript",
         "typescript",
         "tsx",
         "json",
-        "prisma"
+        "prisma",
       },
+    },
+  },
+
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- add any options here
+    },
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
     },
   },
 }
