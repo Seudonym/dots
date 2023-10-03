@@ -1,4 +1,5 @@
 nvim/.*
+nvim/lazy-lock.json
 nvim/LICENSE
 nvim/init.lua
 nvim/lua/core

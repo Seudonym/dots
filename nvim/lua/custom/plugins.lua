@@ -31,10 +31,7 @@ local plugins = {
     cmd = "Copilot",
     event = "InsertEnter",
     config = function()
-      require("copilot").setup {
-        suggestion = { enabled = true, auto_trigger = true },
-        panel = { enabled = false },
-      }
+      require "custom.configs.copilot"
     end,
   },
   {
@@ -74,6 +71,9 @@ local plugins = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
     },
+    config = function()
+      require "custom.configs.noice"
+    end,
   },
 }
 
