@@ -5,6 +5,7 @@ M.ui = {
   statusline = {
     theme = "vscode_colored",
   },
+  transparency = true,
 }
 M.plugins = "custom.plugins"
 return M

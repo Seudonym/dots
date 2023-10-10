@@ -69,10 +69,16 @@ local plugins = {
     },
     dependencies = {
       "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
     },
     config = function()
       require "custom.configs.noice"
+    end,
+  },
+
+  {
+    "rcarriga/nvim-notify",
+    config = function()
+      require "custom.configs.notify"
     end,
   },
 }
