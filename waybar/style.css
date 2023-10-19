@@ -1,56 +1,21 @@
+@import url("/home/wahid/.cache/wal/colors-waybar.css");
+
 * {
   border: none;
   border-radius: 0;
   font-family: "JetBrainsMono Nerd Font";
   font-weight: bold;
   font-size: 15px;
-  min-height: 0;
+  min-height: 20px;
+  outline-style: none;
+  background: none;
+  margin: 0;
+  padding: 0;
 }
 
-window#waybar {
-  background: #1e1e2e;
-  opacity: 0.8;
-  color: #cdd6f4;
-}
 
-tooltip {
-  background: #1e1e2e;
-  border-radius: 3px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: #1e1e2e;
-}
-
-#workspaces button {
-  padding: 5px;
-  color: #1e2e2e;
-  margin-right: 5px;
-}
-
-#workspaces button.active {
-  color: #a6adc8;
-}
-
-#workspaces button.focused {
-  color: #a6adc8;
-  background: #eba0ac;
-  border-radius: 3px;
-}
-
-#workspaces button.urgent {
-  color: #1e1e2e;
-  background: #a6e3a1;
-  border-radius: 3px;
-}
-
-#workspaces button:hover {
-  background: #1e1e2e;
-  color: #cdd6f4;
-  border-radius: 3px;
-}
-
+tooltip,
 #custom-power_profile,
-#custom-weather,
 #window,
 #battery,
 #clock,
@@ -60,87 +25,104 @@ tooltip {
 #temperature,
 #workspaces,
 #tray,
-#backlight {
-  background: #1e1e2e;
-  padding: 0px 10px;
-  /* margin: 4px 0px 0px 0px; */
-  /* border: 1px solid #181825; */
+#backlight,
+#taskbar {
+  margin-top: 5px;
+  background: @background;
+  color: @foreground;
 }
 
-#temperature {
-  border-radius: 3px 0px 0px 3px;
-}
-
-#temperature.critical {
-  color: #eba0ac;
-}
-
-#backlight {
-  border-radius: 3px 0px 0px 3px;
-}
-
-#tray {
-  border-radius: 3px;
+#clock,
+#workspaces,
+#bluetooth,
+#custom-power_profile,
+#backlight,
+#pulseaudio.microphone,
+#taskbar {
   margin-right: 10px;
 }
 
-#workspaces {
-  background: #1e1e2e;
-  border-radius: 3px;
-  margin-left: 10px;
-  padding-right: 0px;
-  padding-left: 5px;
+/* right end */
+#bluetooth,
+#custom-power_profile,
+#backlight,
+#pulseaudio.microphone {
+  border-radius: 0px 20px 20px 0px;
+  padding-right: 15px;
+  padding-left: 7px;
 }
 
-#custom-power_profile {
-  color: #a6e3a1;
-  border-left: 0px;
-  border-right: 0px;
+/* left end */
+#network,
+#temperature,
+#battery,
+#pulseaudio {
+  border-radius: 20px 0px 0px 20px;
+  padding-left: 15px;
+  padding-right: 7px;
 }
 
-#window {
-  border-radius: 3px;
-  margin-left: 60px;
-  margin-right: 60px;
+/* individual modules */
+#clock,
+#workspaces,
+#tray,
+#taskbar {
+  border-radius: 30px;
+  padding: 0px 15px;
 }
 
 #clock {
-  color: #fab387;
-  border-radius: 3px;
   margin-left: 10px;
-  border-right: 0px;
 }
 
-#network {
-  color: #f9e2af;
-  border-radius: 3px 0px 0px 3px;
-  border-left: 0px;
-  border-right: 0px;
-}
-
-#bluetooth {
-  color: #89b4fa;
-  border-radius: 0px 3px 3px 0px;
+#tray {
   margin-right: 10px;
 }
 
-#pulseaudio {
-  color: #89b4fa;
-  border-left: 0px;
-  border-right: 0px;
+tooltip {
+  border-radius: 3px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #1e1e2e;
+  margin: 20px;
+}
+/* Start of specific styling */
+/* Workspaces */
+#workspaces {
+  padding: 5px;
 }
 
-#pulseaudio.microphone {
-  color: #cba6f7;
-  border-left: 0px;
-  border-right: 0px;
-  border-radius: 0px 3px 3px 0px;
-  margin-right: 10px;
+#workspaces button {
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-#battery {
-  color: #a6e3a1;
-  border-radius: 0 3px 3px 0;
-  margin-right: 10px;
-  border-left: 0px;
+#workspaces button.active {
+  background: @foreground;
+  color: @background;
+  border-radius: 40px;
+  transition: ease-in color 0.5s;
+}
+
+/* Taskbar */
+#taskbar {
+  padding: 5px;
+}
+
+#taskbar button {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#taskbar button.active {
+  background: @foreground;
+  color: @background;
+  border-radius: 40px;
+  transition: ease-in color 0.5s;
+}
+/* audio */
+
+/* tray */
+#tray {
+  padding: 0px 10px
 }
