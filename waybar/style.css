@@ -126,3 +126,14 @@ tooltip {
 #tray {
   padding: 0px 10px
 }
+
+#cava {
+  background: @background;
+  margin-top: 5px;
+  padding: 0px 15px;
+  border-radius: 40px;
+  border-right: 0px;
+  border-left: 0px;
+  font-size: 22px;
+  color: @color1;
+}

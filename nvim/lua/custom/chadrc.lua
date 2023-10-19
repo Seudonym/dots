@@ -1,11 +1,11 @@
 ---@type ChadrcConfig
 local M = {}
 M.ui = {
-  theme = "tokyonight",
+  theme = "rosepine",
   statusline = {
     theme = "vscode_colored",
   },
-  transparency = true,
+  transparency = false,
 }
 M.plugins = "custom.plugins"
 return M

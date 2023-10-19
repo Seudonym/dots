@@ -80,7 +80,7 @@ local plugins = {
     config = function()
       require "custom.configs.notify"
     end,
-  },
+  }
 }
 
 return plugins

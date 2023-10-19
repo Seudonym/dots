@@ -1,5 +1,7 @@
-width=600
-height=350
+allow_images=true
+no_actions=true
+height=500
+width=400
 location=center
 show=drun
 prompt=Search...
@@ -11,3 +13,4 @@ orientation=vertical
 content_halign=fill
 insensitive=true
 gtk_dark=true
+

@@ -13,22 +13,20 @@ source "$HOME/.cache/wal/colors.sh"
 # ----------------------------------------------------- 
 # Copy selected wallpaper into .cache folder
 # ----------------------------------------------------- 
-cp $wallpaper ~/.cache/current_wallpaper.jpg
 
 # ----------------------------------------------------- 
 # get wallpaper iamge name
 # ----------------------------------------------------- 
-newwall=$(echo $wallpaper | sed "s|$HOME/wallpaper/||g")
 
 # ----------------------------------------------------- 
-# Set the new wallpaper
+# Set the new wallpaper and reload waybar
 # ----------------------------------------------------- 
 swww img $wallpaper \
-    --transition-fps=90 \
-    --transition-type="random" \
-    --transition-duration=1.0 \
-    --transition-pos "$( hyprctl cursorpos )"
+    --transition-fps=60 \
+    --transition-type=center 
 
+killall waybar
+waybar &
 # ----------------------------------------------------- 
 # Send notification
 # ----------------------------------------------------- 
