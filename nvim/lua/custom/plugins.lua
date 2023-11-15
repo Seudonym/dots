@@ -13,20 +13,6 @@ local plugins = {
     end,
   },
   {
-    "neovim/nvim-lspconfig",
-    dependencies = {
-      "jose-elias-alvarez/null-ls.nvim",
-      config = function()
-        require "custom.configs.null-ls"
-      end,
-    },
-    config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
-    end,
-  },
-
-  {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
@@ -63,16 +49,27 @@ local plugins = {
 
   {
     "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "lua-language-server",
-        "html-lsp",
-        "css-lsp",
-        "emmet-ls",
-        "prettier",
-        "stylua",
-      },
+  },
+
+  {
+    'williamboman/mason-lspconfig.nvim',
+    lazy = false,
+    config = function()
+      require "custom.configs.mason-lspconfig"
+    end
+  },
+
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = {
+      "jose-elias-alvarez/null-ls.nvim",
+      config = function()
+        require "custom.configs.null-ls"
+      end,
     },
+    config = function()
+      require "plugins.configs.lspconfig"
+    end,
   },
 
   {
