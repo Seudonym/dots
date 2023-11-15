@@ -1,7 +1,7 @@
 ---@type ChadrcConfig
 local M = {}
 M.ui = {
-  theme = "rosepine",
+  theme = "ayu_dark",
   statusline = {
     theme = "vscode_colored",
   },

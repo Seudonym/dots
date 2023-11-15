@@ -56,7 +56,21 @@ local plugins = {
         "typescript",
         "tsx",
         "json",
-        "prisma",
+        -- "prisma",
+      },
+    },
+  },
+
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "lua-language-server",
+        "html-lsp",
+        "css-lsp",
+        "emmet-ls",
+        "prettier",
+        "stylua",
       },
     },
   },
@@ -80,7 +94,7 @@ local plugins = {
     config = function()
       require "custom.configs.notify"
     end,
-  }
+  },
 }
 
 return plugins
