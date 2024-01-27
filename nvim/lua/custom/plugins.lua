@@ -67,9 +67,6 @@ local plugins = {
         require "custom.configs.null-ls"
       end,
     },
-    config = function()
-      require "plugins.configs.lspconfig"
-    end,
   },
 
   {

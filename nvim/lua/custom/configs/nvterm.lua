@@ -1,6 +1,6 @@
 require("nvterm").setup({
   terminals = {
-    shell = "zsh",
+    shell = "fish",
     list = {},
     type_opts = {
       float = {
