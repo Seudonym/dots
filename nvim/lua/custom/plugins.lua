@@ -1,11 +1,5 @@
 local plugins = {
   {
-    "nvim-tree/nvim-web-devicons",
-    config = function()
-      require "custom.configs.devicons"
-    end,
-  },
-  {
     "NvChad/nvterm",
     config = function()
       require("nvterm").setup()
@@ -48,18 +42,6 @@ local plugins = {
   },
 
   {
-    "williamboman/mason.nvim",
-  },
-
-  {
-    'williamboman/mason-lspconfig.nvim',
-    lazy = false,
-    config = function()
-      require "custom.configs.mason-lspconfig"
-    end
-  },
-
-  {
     "neovim/nvim-lspconfig",
     dependencies = {
       "jose-elias-alvarez/null-ls.nvim",
@@ -67,6 +49,10 @@ local plugins = {
         require "custom.configs.null-ls"
       end,
     },
+    config = function ()
+      require "plugins.configs.lspconfig"
+      require "custom.configs.lspconfig"
+    end
   },
 
   {
@@ -89,6 +75,14 @@ local plugins = {
       require "custom.configs.notify"
     end,
   },
+
+  {
+    "echasnovski/mini.indentscope",
+    event = "BufRead",
+    config = function()
+      require "custom.configs.indentscope"
+    end,
+  }
 }
 
 return plugins
