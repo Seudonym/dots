@@ -7,7 +7,6 @@ local M = {
     ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
   },
 
-  v = {}
 }
 
 return M
