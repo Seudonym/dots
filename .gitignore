@@ -1,6 +1,2 @@
-nvim/.*
-nvim/lazy-lock.json
-nvim/LICENSE
-nvim/init.lua
-nvim/lua/core
-nvim/lua/plugins
+**/lazy-lock.json
+**/*.toml
