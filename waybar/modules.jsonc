@@ -1,0 +1,68 @@
+// Modules configuration
+{
+  "clock": {
+    // "timezone": "America/New_York",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%H:%M:%S  %Y-%m-%d}",
+    "interval": 1
+  },
+
+  "battery": {
+    "interval": 60,
+    "states": {
+      "warning": 40,
+      "critical": 20
+    },
+    "format": "{icon} {capacity}%",
+    "format-icons": [
+      "<span color=\"#f7768e\">  </span>",
+      "<span color=\"#f7768e\">  </span>",
+      "<span color=\"#7aa2f7\">  </span>",
+      "<span color=\"#7aa2f7\">  </span>",
+      "<span color=\"#7aa2f7\">  </span>"
+    ],
+    "format-charging": "<span color=\"#e0af68\">󱐌</span> {capacity}%"
+  },
+  "network": {
+    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "format-wifi": "    {essid} ({signalStrength}%)",
+    "format-ethernet": "{ipaddr}/{cidr} ",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "cpu": {
+    "format": "<span color=\"#7aa2f7\">󰻠 </span>{usage}%",
+    "interval": 4
+  },
+  "memory": {
+    "format": "<span color=\"#7aa2f7\">󰍛 </span>{used}GiB",
+    "interval": 4
+  },
+  "temperature": {
+    "hwmon-path": "/sys/class/hwmon/hwmon6/temp1_input",
+    "critical-threshold": 80,
+    "format": "<span color=\"#7aa2f7\"> </span>{temperatureC}°C",
+    "format-critical": "<span color=\"#f7768e\"> </span>{temperatureC}°C",
+    "interval": 4
+  },
+  "wireplumber": {
+    "scroll-step": 5, // %, can be a float
+    "format": "<span color=\"#7aa2f7\">{icon} </span>{volume}%",
+    "format-muted": "<span color=\"#f7768e\"> </span>Muted",
+    "format-icons": [" ", " ", "  "],
+    "on-click": "pavucontrol"
+  },
+  "hyprland/window": {
+    "max-length": 64
+  },
+  "tray": {
+    "icon-size": 22,
+    "spacing": 6
+  },
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "on-click": "activate"
+  }
+}

@@ -1,139 +1,98 @@
-@import url("/home/wahid/.cache/wal/colors-waybar.css");
+@import "/home/wahid/.cache/wal/colors-waybar.css";
 
 * {
-  border: none;
-  border-radius: 0;
-  font-family: "JetBrainsMono Nerd Font";
-  font-weight: bold;
-  font-size: 15px;
-  min-height: 20px;
-  outline-style: none;
-  background: none;
-  margin: 0;
-  padding: 0;
-}
-
-
-tooltip,
-#custom-power_profile,
-#window,
-#battery,
-#clock,
-#pulseaudio,
-#network,
-#bluetooth,
-#temperature,
-#workspaces,
-#tray,
-#backlight,
-#taskbar {
-  margin-top: 5px;
-  background: @background;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+  font-size: 11pt;
   color: @foreground;
 }
 
-#clock,
-#workspaces,
-#bluetooth,
-#custom-power_profile,
-#backlight,
-#pulseaudio.microphone,
-#taskbar {
-  margin-right: 10px;
+
+/* main waybar */
+window#waybar {
+  background: @background;
 }
 
-/* right end */
-#bluetooth,
-#custom-power_profile,
-#backlight,
-#pulseaudio.microphone {
-  border-radius: 0px 20px 20px 0px;
-  padding-right: 15px;
-  padding-left: 7px;
-}
-
-/* left end */
-#network,
-#temperature,
-#battery,
-#pulseaudio {
-  border-radius: 20px 0px 0px 20px;
-  padding-left: 15px;
-  padding-right: 7px;
-}
-
-/* individual modules */
-#clock,
-#workspaces,
-#tray,
-#taskbar {
-  border-radius: 30px;
-  padding: 0px 15px;
-}
-
-#clock {
-  margin-left: 10px;
-}
-
-#tray {
-  margin-right: 10px;
-}
-
+/* when hovering over modules */
 tooltip {
-  border-radius: 3px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: #1e1e2e;
-  margin: 20px;
-}
-/* Start of specific styling */
-/* Workspaces */
-#workspaces {
-  padding: 5px;
+  background: #1e1e2e;
+  border-radius: 5%;
 }
 
 #workspaces button {
-  padding-left: 5px;
-  padding-right: 5px;
+  padding: 2px;
 }
 
+/* Sets active workspace to have a solid line on the bottom */
 #workspaces button.active {
-  background: @foreground;
-  color: @background;
-  border-radius: 40px;
-  transition: ease-in color 0.5s;
+  border-bottom: 3px solid @color2;
+  border-radius: 0;
+  margin-top: 3px;
+  transition: all 0.5s ease-in-out;
 }
 
-/* Taskbar */
-#taskbar {
-  padding: 5px;
+/* More workspace stuff for highlighting on hover */
+#workspaces button.focused {
+  color: @color0;
 }
 
-#taskbar button {
-  padding-left: 5px;
-  padding-right: 5px;
+#workspaces button.urgent {
+  color: @color8;
 }
 
-#taskbar button.active {
-  background: @foreground;
-  color: @background;
-  border-radius: 40px;
-  transition: ease-in color 0.5s;
+#workspaces button:hover {
+  background: @color4;
+  color: @color3;
 }
-/* audio */
 
-/* tray */
+/* Sets background, padding, margins, and borders for (all) modules */
+#workspaces,
+#clock,
+#window,
+#temperature,
+#cpu,
+#memory,
+#wireplumber,
+#tray,
+#network,
+#battery {
+  padding: 0 10px;
+  border: 0;
+	/* margin-top: 4px; */
+}
+
+#workspaces {
+  padding-right: 0px;
+}
+
+/* Hide window module when not focused on window or empty workspace */
+window#waybar.empty #window {
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+}
+
+/* Set up rounding to make these modules look like separate pills */
 #tray {
-  padding: 0px 10px
+  border-radius: 12px;
+  margin-right: 4px;
 }
 
-#cava {
-  background: @background;
-  margin-top: 5px;
-  padding: 0px 15px;
-  border-radius: 40px;
-  border-right: 0px;
-  border-left: 0px;
-  font-size: 22px;
-  color: @color1;
+#window {
+  border-radius: 12px;
 }
+
+#clock {
+    border-radius: 0 10px 10px 0;
+}
+
+/* close left side of bar */
+#battery {
+  border-radius: 12px 0 0 12px;
+}
+
+/* close right side of bar */
+#network {
+    padding:0 20px;
+}
+

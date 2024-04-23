@@ -1,9 +1,8 @@
-#!/bin/bash
-# ----------------------------------------------------- 
-# Select random wallpaper and create color scheme
-# ----------------------------------------------------- 
-killall display
+#!/usr/bin/bash
+
 wal -q -i ~/Pictures/Wallpapers/
+killall waybar
+waybar &
 
 # ----------------------------------------------------- 
 # Load current pywal color scheme
@@ -13,22 +12,16 @@ source "$HOME/.cache/wal/colors.sh"
 # ----------------------------------------------------- 
 # Copy selected wallpaper into .cache folder
 # ----------------------------------------------------- 
-
+# cp $wallpaper ~/.cache/current_wallpaper.jpg
 # ----------------------------------------------------- 
 # get wallpaper iamge name
 # ----------------------------------------------------- 
+cp $wallpaper ~/.cache/current_wallpaper.jpg
 
 # ----------------------------------------------------- 
 # Set the new wallpaper and reload waybar
 # ----------------------------------------------------- 
 swww img $wallpaper \
-    --transition-fps=60 \
-    --transition-type=center 
-
-killall waybar
-waybar &
-# ----------------------------------------------------- 
-# Send notification
-# ----------------------------------------------------- 
-notify-send "Colors and Wallpaper updated" "with image $newwall"
-echo "DONE!"
+    --transition-fps=165 \
+    --transition-type="grow" \
+    --transition-pos "$(hyprctl cursorpos)"
